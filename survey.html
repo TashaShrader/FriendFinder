@@ -4,28 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-        <script type="text/javascript">
-                $("#submit").on("click", function (event) {
-                event.preventDefault();
-                var newFriend = {
-                    "name": $("#name").val().trim(),
-                    "photo": $("#userURL").val().trim(),
-                    "scores": $('.dropdown-item').dropdown()
-
-                }
-           
-                $.post("/api/friends", newFriend)
-                    .then(function (data) {
-                        console.log("friends arr updated", data);
-
-                    });
-            });
-        </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body class="pl-5">
@@ -33,11 +16,11 @@
     <header class="pt-5 pl-5">
         <h1>Survey Questions</h1>
     </header>
-<hr>
+    <hr>
     <row>
-      <col-md-6  class="pl-5">
+        <col-md-6 class="pl-5">
             <h2>About You</h2>
-</col-md-6>
+        </col-md-6>
     </row>
     <row>
 
@@ -49,164 +32,175 @@
                         <br>
                         <input type="text" class="form-control span1" id="name">
                     </div>
+
                     <div class="form-group">
                         <label for="phone">Image Url: (required)</label>
                         <br>
                         <input type="text" class="form-control span1" id="imageURL">
                     </div>
-                    <h2>Question 1:</h2>
-                    <label for="dogs">Your mind is always buzzing with unexplored ideas and plans.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input1">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 2:</h2>
-                    <label for="dogs">Generally speaking, you rely more on your experience than your imagination.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input2">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 3:</h2>
-                    <label for="dogs">You find it easy to stay relaxed and focused even when there is some pressure.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input3">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 4:</h2>
-                    <label for="dogs">You rarely do something just out of sheer curiosity.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input4">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 5:</h2>
-                    <label for="dogs">People can rarely upset you.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input5">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 6:</h2>
-                    <label for="dogs">It is often difficult for you to relate to other people’s feelings.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input6">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 7:</h2>
-                    <label for="dogs">In a discussion, truth should be more important than people’s sensitivities.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input7">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 8:</h2>
-                    <label for="dogs">You rarely get carried away by fantasies and ideas.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input8">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 9:</h2>
-                    <label for="dogs">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input9">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-                    <h2>Question 10:</h2>
-                    <label for="dogs">You feel more energetic after spending time with a group of people.</label>
-                    <div name="dogs" class="input-group mb-3" style="width:14rem">
-                        <select class="custom-select" id="input10">
-                          <option selected>Choose An Answer...</option>
-                          <option value="1">1 (strongly disagree)</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                    </div>
-                    <br>
-
-                    <button class="btn btn-danger btn-lg" id="submit" width="70px">submit</button>
-
                 </form>
             </div>
+            <h2>Question 1:</h2>
+            <label for="dogs">Your mind is always buzzing with unexplored ideas and plans.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input1">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 2:</h2>
+            <label for="dogs">Generally speaking, you rely more on your experience than your
+                imagination.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input2">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 3:</h2>
+            <label for="dogs">You find it easy to stay relaxed and focused even when there is some
+                pressure.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input3">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 4:</h2>
+            <label for="dogs">You rarely do something just out of sheer curiosity.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input4">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 5:</h2>
+            <label for="dogs">People can rarely upset you.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input5">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 6:</h2>
+            <label for="dogs">It is often difficult for you to relate to other people’s feelings.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input6">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 7:</h2>
+            <label for="dogs">In a discussion, truth should be more important than people’s
+                sensitivities.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input7">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 8:</h2>
+            <label for="dogs">You rarely get carried away by fantasies and ideas.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input8">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 9:</h2>
+            <label for="dogs">You think that everyone’s views should be respected regardless of whether they are
+                supported by facts or not.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input9">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+            <h2>Question 10:</h2>
+            <label for="dogs">You feel more energetic after spending time with a group of people.</label>
+            <div name="dogs" class="input-group mb-3" style="width:14rem">
+                <select class="custom-select" id="input10">
+                    <option selected>Choose An Answer...</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <br>
+
+            <a href="result"></a><button class="btn btn-danger btn-lg" id="submit" width="70px">submit</button></a>
+
+
         </div>
 
 
 
 
+        <script type="text/javascript">
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+                 var userAnswers = [$("#input1"), $("#input2"), $("#input3"), $("#input4"), $("#input5"), $("#input6"), $("#input7"), $("#input8"), $("#input9"), $("#input10")];
 
+                var newFriend = {
+                    "name": $("#name").val().trim(),
+                    "photo": $("#imageURL").val().trim(),
+                    "scores": $(userAnswers)
+                }
 
+                $.post("/api/friends", newFriend)
+                    .then(function (data) {
+                        console.log("friends arr updated", data);
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
+                    });
+            });
+        </script>
 </body>
 
 </html>
